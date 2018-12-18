@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EasyAuthen_17dec18" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="EasyAuthen_17dec18" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,20 +68,23 @@
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3mR-e2-ode"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ell-mn-6d6">
-                                <rect key="frame" x="156" y="521" width="102" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cn1-C4-3No">
+                                <rect key="frame" x="153" y="529" width="108" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="New Register">
+                                    <color key="titleColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wVE-vV-SSM" kind="show" id="ihA-9z-man"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ell-mn-6d6" firstAttribute="top" secondItem="FlQ-RP-Mvx" secondAttribute="bottom" constant="13" id="0IP-uZ-JNh"/>
                             <constraint firstItem="arM-BX-Zep" firstAttribute="top" secondItem="Xl9-Zx-LId" secondAttribute="bottom" constant="6.5" id="0cB-5C-LIn"/>
+                            <constraint firstItem="Cn1-C4-3No" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Na-Gh-pQl"/>
                             <constraint firstItem="ESu-fd-5q3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="7Fu-Yg-6Eg"/>
                             <constraint firstItem="crj-No-76y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CXR-Py-4Cs"/>
-                            <constraint firstItem="Ell-mn-6d6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FJn-6v-Ixo"/>
                             <constraint firstItem="arM-BX-Zep" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hok-4U-pjl"/>
                             <constraint firstItem="FlQ-RP-Mvx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I2S-fW-29F"/>
                             <constraint firstItem="Xl9-Zx-LId" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R0d-lX-nqH"/>
@@ -91,6 +94,7 @@
                             <constraint firstItem="Xl9-Zx-LId" firstAttribute="top" secondItem="ESu-fd-5q3" secondAttribute="bottom" constant="27" id="kno-G0-XjZ"/>
                             <constraint firstItem="gpj-P7-sYp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="u4g-cG-uX0"/>
                             <constraint firstItem="crj-No-76y" firstAttribute="top" secondItem="arM-BX-Zep" secondAttribute="bottom" constant="10" id="uIO-je-n8e"/>
+                            <constraint firstItem="Cn1-C4-3No" firstAttribute="top" secondItem="FlQ-RP-Mvx" secondAttribute="bottom" constant="21" id="usd-qa-35I"/>
                             <constraint firstItem="ESu-fd-5q3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wag-Kx-RcR"/>
                             <constraint firstItem="gpj-P7-sYp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zIJ-nd-OWL"/>
                         </constraints>
@@ -104,6 +108,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
+        </scene>
+        <!--Register-->
+        <scene sceneID="mmY-uH-kXj">
+            <objects>
+                <viewController title="Register" id="wVE-vV-SSM" customClass="RegisterViewController" customModule="EasyAuthen_17dec18" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="viw-VF-4hj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="WQq-PU-pe0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7n-z2-SZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900" y="21"/>
         </scene>
     </scenes>
     <resources>
