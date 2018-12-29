@@ -158,14 +158,38 @@
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gd-Fa-Ke0">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <items>
                                     <barButtonItem title="Item" id="snt-PR-34U"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_dice" translatesAutoresizingMaskIntoConstraints="NO" id="iAE-7l-I09">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_dice" translatesAutoresizingMaskIntoConstraints="NO" id="iAE-7l-I09">
                                 <rect key="frame" x="132" y="180" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="AHb-Jg-TDr"/>
+                                    <constraint firstAttribute="height" constant="150" id="z0n-B7-07h"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice2" translatesAutoresizingMaskIntoConstraints="NO" id="isL-LW-1u6">
+                                <rect key="frame" x="157" y="338" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="KL6-mf-6v3"/>
+                                    <constraint firstAttribute="width" constant="100" id="p0j-Fa-OwG"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="hfH-Wk-jVk">
+                                <rect key="frame" x="49" y="338" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="0rl-m5-jyf"/>
+                                    <constraint firstAttribute="width" constant="100" id="Bs9-uJ-dV0"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice3" translatesAutoresizingMaskIntoConstraints="NO" id="lLE-Os-iMz">
+                                <rect key="frame" x="265" y="338" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="fL0-4g-MF8"/>
+                                    <constraint firstAttribute="width" constant="100" id="hSF-6F-G3L"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -174,12 +198,20 @@
                             <constraint firstItem="0gd-Fa-Ke0" firstAttribute="bottom" secondItem="moN-MC-Vgw" secondAttribute="bottom" id="4wA-fg-2Wr"/>
                             <constraint firstItem="w1C-jr-8zW" firstAttribute="trailing" secondItem="moN-MC-Vgw" secondAttribute="trailing" id="7Zi-0P-uiO"/>
                             <constraint firstItem="w1C-jr-8zW" firstAttribute="top" secondItem="moN-MC-Vgw" secondAttribute="top" id="Afv-r1-bQp"/>
+                            <constraint firstItem="isL-LW-1u6" firstAttribute="top" secondItem="iAE-7l-I09" secondAttribute="bottom" constant="8" id="ChU-sl-Sdc"/>
+                            <constraint firstItem="iAE-7l-I09" firstAttribute="top" secondItem="w1C-jr-8zW" secondAttribute="bottom" constant="92" id="Hu5-uU-sln"/>
                             <constraint firstItem="0gd-Fa-Ke0" firstAttribute="leading" secondItem="moN-MC-Vgw" secondAttribute="leading" id="J4R-h7-CLD"/>
+                            <constraint firstItem="iAE-7l-I09" firstAttribute="centerX" secondItem="m5M-Gd-lpB" secondAttribute="centerX" id="KIQ-yp-5ZF"/>
                             <constraint firstItem="w1C-jr-8zW" firstAttribute="leading" secondItem="moN-MC-Vgw" secondAttribute="leading" id="Nmf-3d-w3f"/>
                             <constraint firstItem="eSy-Lw-9ys" firstAttribute="top" secondItem="m5M-Gd-lpB" secondAttribute="top" id="Td9-WI-HT3"/>
+                            <constraint firstItem="hfH-Wk-jVk" firstAttribute="centerX" secondItem="m5M-Gd-lpB" secondAttribute="centerX" constant="-108" id="eb3-59-sXb"/>
                             <constraint firstAttribute="bottom" secondItem="eSy-Lw-9ys" secondAttribute="bottom" id="fok-CR-vcM"/>
+                            <constraint firstItem="lLE-Os-iMz" firstAttribute="top" secondItem="iAE-7l-I09" secondAttribute="bottom" constant="8" id="ldt-eZ-bpc"/>
                             <constraint firstItem="0gd-Fa-Ke0" firstAttribute="trailing" secondItem="moN-MC-Vgw" secondAttribute="trailing" id="lzh-cC-2WF"/>
+                            <constraint firstItem="lLE-Os-iMz" firstAttribute="centerX" secondItem="m5M-Gd-lpB" secondAttribute="centerX" constant="108" id="m6L-Sy-eTF"/>
                             <constraint firstItem="eSy-Lw-9ys" firstAttribute="leading" secondItem="moN-MC-Vgw" secondAttribute="leading" id="qlw-mP-JOS"/>
+                            <constraint firstItem="isL-LW-1u6" firstAttribute="centerX" secondItem="m5M-Gd-lpB" secondAttribute="centerX" id="vlz-9h-9eu"/>
+                            <constraint firstItem="hfH-Wk-jVk" firstAttribute="top" secondItem="iAE-7l-I09" secondAttribute="bottom" constant="8" id="vnd-Dw-Gwx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="moN-MC-Vgw"/>
                     </view>
@@ -193,6 +225,9 @@
         <image name="Logo" width="170.5" height="170"/>
         <image name="Wallpaper" width="1152" height="1728"/>
         <image name="bg_service" width="333" height="333"/>
+        <image name="dice1" width="170.5" height="170.5"/>
+        <image name="dice2" width="170.5" height="170.5"/>
+        <image name="dice3" width="170.5" height="170.5"/>
         <image name="logo_dice" width="85" height="85"/>
     </resources>
 </document>
