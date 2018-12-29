@@ -13,6 +13,11 @@ class ViewController: UIViewController {
 //    Explicit
     var user: String = ""
     var password: String = ""
+    let mySegue: String = "success_login"
+    
+    
+    let demoData = ["user1":"1231", "user2":"1232", "user3":"1233", "user4":"1234", "user5":"1235"]
+    
     
     
     
@@ -43,10 +48,45 @@ class ViewController: UIViewController {
         }   else    {
 //            No Space
             print("No Space")
+            checkUserAnPassword(userString: user, passwordString: password)
+            
+            
+            
         }   // if
         
         
     }   // loginButton Function
+    
+    func checkUserAnPassword(userString: String, passwordString: String) -> Void {
+        
+        //            Test Variable Nil ?
+        if let testPassword = demoData[userString] {
+            
+            let truePassword = testPassword
+            print("truePassword ==> " + truePassword)
+            
+            if (passwordString == truePassword) {
+//                Authen True
+                
+                performSegue(withIdentifier: mySegue, sender: self)
+                
+            } else {
+//                Authen False
+                myAlert(title: "Password False", message: "Please Try Again Password False")
+            }
+            
+        } else {
+            myAlert(title: "User False", message: "No \(userString) in my Database")
+        }
+        
+        
+        
+        
+//        let truePassword = demoData[userString]
+//        print("truePassword ==> " + truePassword!)
+        
+        
+    }
     
     func myAlert(title: String, message: String) -> Void {
         
