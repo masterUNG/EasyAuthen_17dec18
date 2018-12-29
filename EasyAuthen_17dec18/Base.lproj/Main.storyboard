@@ -158,10 +158,11 @@
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gd-Fa-Ke0">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Item" id="snt-PR-34U"/>
+                                    <barButtonItem title="Item" image="shake" id="snt-PR-34U"/>
                                 </items>
+                                <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_dice" translatesAutoresizingMaskIntoConstraints="NO" id="iAE-7l-I09">
                                 <rect key="frame" x="132" y="180" width="150" height="150"/>
@@ -229,5 +230,6 @@
         <image name="dice2" width="170.5" height="170.5"/>
         <image name="dice3" width="170.5" height="170.5"/>
         <image name="logo_dice" width="85" height="85"/>
+        <image name="shake" width="42.5" height="42.5"/>
     </resources>
 </document>
