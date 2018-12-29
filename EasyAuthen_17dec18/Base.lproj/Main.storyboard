@@ -138,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7n-z2-SZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="42"/>
+            <point key="canvasLocation" x="913" y="21"/>
         </scene>
         <!--Service-->
         <scene sceneID="SW1-vx-bbD">
@@ -151,12 +151,34 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_service" translatesAutoresizingMaskIntoConstraints="NO" id="eSy-Lw-9ys">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1C-jr-8zW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Service" id="JfJ-MQ-8Vb"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gd-Fa-Ke0">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Item" id="snt-PR-34U"/>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_dice" translatesAutoresizingMaskIntoConstraints="NO" id="iAE-7l-I09">
+                                <rect key="frame" x="132" y="180" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eSy-Lw-9ys" firstAttribute="trailing" secondItem="moN-MC-Vgw" secondAttribute="trailing" id="4mW-8C-dDw"/>
+                            <constraint firstItem="0gd-Fa-Ke0" firstAttribute="bottom" secondItem="moN-MC-Vgw" secondAttribute="bottom" id="4wA-fg-2Wr"/>
+                            <constraint firstItem="w1C-jr-8zW" firstAttribute="trailing" secondItem="moN-MC-Vgw" secondAttribute="trailing" id="7Zi-0P-uiO"/>
+                            <constraint firstItem="w1C-jr-8zW" firstAttribute="top" secondItem="moN-MC-Vgw" secondAttribute="top" id="Afv-r1-bQp"/>
+                            <constraint firstItem="0gd-Fa-Ke0" firstAttribute="leading" secondItem="moN-MC-Vgw" secondAttribute="leading" id="J4R-h7-CLD"/>
+                            <constraint firstItem="w1C-jr-8zW" firstAttribute="leading" secondItem="moN-MC-Vgw" secondAttribute="leading" id="Nmf-3d-w3f"/>
                             <constraint firstItem="eSy-Lw-9ys" firstAttribute="top" secondItem="m5M-Gd-lpB" secondAttribute="top" id="Td9-WI-HT3"/>
                             <constraint firstAttribute="bottom" secondItem="eSy-Lw-9ys" secondAttribute="bottom" id="fok-CR-vcM"/>
+                            <constraint firstItem="0gd-Fa-Ke0" firstAttribute="trailing" secondItem="moN-MC-Vgw" secondAttribute="trailing" id="lzh-cC-2WF"/>
                             <constraint firstItem="eSy-Lw-9ys" firstAttribute="leading" secondItem="moN-MC-Vgw" secondAttribute="leading" id="qlw-mP-JOS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="moN-MC-Vgw"/>
@@ -171,5 +193,6 @@
         <image name="Logo" width="170.5" height="170"/>
         <image name="Wallpaper" width="1152" height="1728"/>
         <image name="bg_service" width="333" height="333"/>
+        <image name="logo_dice" width="85" height="85"/>
     </resources>
 </document>
