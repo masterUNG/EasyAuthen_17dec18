@@ -15,6 +15,14 @@ class ViewController: UIViewController {
     var password: String = ""
     let mySegue: String = "success_login"
     
+    var receiveJSON: String?
+    
+    
+    let urlJSON: String = "https://jsonplaceholder.typicode.com/users"
+    let urlPHP: String = "http://www.androidthai.in.th/bua/getAllData.php"
+    
+    
+    
     
     let demoData = ["user1":"1231", "user2":"1232", "user3":"1233", "user4":"1234", "user5":"1235"]
     
@@ -103,8 +111,53 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        loadJSON()
+        
     }   // Main Function
+    
+    func loadJSON() -> Void {
+        print("loadJSON Work")
+        
+        let urlAPI = URL(string: urlJSON)
+        let request = NSMutableURLRequest(url: urlAPI!)
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+            
+            if (error != nil) {
+                print("Have Error")
+            } else {
+                
+                if let testData = data {
+                    
+                    let canReadable = NSString(data: testData, encoding: String.Encoding.utf8.rawValue)
+//                    print("canReadabel ==> \(String(describing: canReadable))")
+                    
+                    var jsonString: String = canReadable! as String
+                    
+                    
+                    let squareBrackers1 = "["
+                    let squareBrackers2 = "]"
+                    
+                    let noPrefixJSON = jsonString.components(separatedBy: squareBrackers1)
+                    let noSubfixJSON = noPrefixJSON[1].components(separatedBy: squareBrackers2)
+                    
+                    jsonString = noSubfixJSON[0]
+                    print("jsonString ==> \(jsonString)")
+                    
+                    
+                    
+                } // if
+                
+            } // if
+            
+        }   // task
+        task.resume()
+        
+        
+        
+        
+        
+    }
 
 
 }   // Main Class
