@@ -14,18 +14,10 @@ class ViewController: UIViewController {
     var user: String = ""
     var password: String = ""
     let mySegue: String = "success_login"
-    
     var receiveJSON: String?
-    
-    
-    let urlJSON: String = "https://jsonplaceholder.typicode.com/users"
-    let urlPHP: String = "http://www.androidthai.in.th/bua/getAllData.php"
-    
-    
-    
-    
+    let urlPHP: String = "https://androidthai.in.th/bua/getAllData.php"
+   
     let demoData = ["user1":"1231", "user2":"1232", "user3":"1233", "user4":"1234", "user5":"1235"]
-    
     
     
     
@@ -104,8 +96,6 @@ class ViewController: UIViewController {
         }))
         self.present(objAlert, animated: true, completion: nil)
         
-        
-        
     }   // myAlert Function
     
 
@@ -116,10 +106,12 @@ class ViewController: UIViewController {
         
     }   // Main Function
     
+
+    
     func loadJSON() -> Void {
         print("loadJSON Work")
         
-        let urlAPI = URL(string: urlJSON)
+        let urlAPI = URL(string: urlPHP)
         let request = NSMutableURLRequest(url: urlAPI!)
         let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
             
@@ -130,8 +122,9 @@ class ViewController: UIViewController {
                 if let testData = data {
                     
                     let canReadable = NSString(data: testData, encoding: String.Encoding.utf8.rawValue)
-//                    print("canReadabel ==> \(String(describing: canReadable))")
+                    print("canReadabel ==> \(String(describing: canReadable))")
                     
+//                    canReaabel is Optional ?
                     var jsonString: String = canReadable! as String
                     
                     
@@ -144,6 +137,8 @@ class ViewController: UIViewController {
                     jsonString = noSubfixJSON[0]
                     print("jsonString ==> \(jsonString)")
                     
+//                    self.convertStringToDictionary(jsonString: jsonString)
+                    
                     
                     
                 } // if
@@ -152,13 +147,39 @@ class ViewController: UIViewController {
             
         }   // task
         task.resume()
-        
-        
-        
-        
-        
-    }
 
+    }   //loadJSoN
+    
+    func convertStringToDictionary(jsonString: String) -> Void {
+        
+//        print("receiveJSoN ==> \(jsonString)")
+        
+        let testJSONung = "{\"user1\":\"1231\"}"
+        
+        
+        var myDictionary: NSDictionary?
+        
+        if let myJSON = testJSONung.data(using: String.Encoding.utf8) {
+            
+            do {
+                
+                myDictionary = try JSONSerialization.jsonObject(with: myJSON, options: []) as? [String: AnyObject] as NSDictionary?
+                
+//                print("myDictionary ==> \(String(describing: myDictionary))")
+                
+                if let testDict = myDictionary {
+                    print("testDict ==> \(testDict)")
+                }
+                
+            } catch let error as NSError {
+                print("convert Error ==> \(error)")
+            }
+            
+            
+            
+        }   // if
+        
+    }   // convert
 
 }   // Main Class
 
