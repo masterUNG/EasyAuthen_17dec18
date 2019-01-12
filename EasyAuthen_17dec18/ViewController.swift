@@ -15,9 +15,6 @@ class ViewController: UIViewController {
     var password: String = ""
     let mySegue: String = "GoToShowProduct"
     var receiveJSON: String?
-    let urlPHP: String = "https://androidthai.in.th/bua/getAllData.php"
-   
-    let demoData = ["user1":"1231", "user2":"1232", "user3":"1233", "user4":"1234", "user5":"1235"]
     
     
     @IBOutlet weak var userTextField: UITextField!
@@ -43,42 +40,13 @@ class ViewController: UIViewController {
         }   else    {
 //            No Space
             print("No Space")
-            checkUserAnPassword(userString: user, passwordString: password)
+            loadJSON(userString: user, passwordString: password)
             
         }   // if
         
     }   // loginButton Function
     
-    func checkUserAnPassword(userString: String, passwordString: String) -> Void {
-        
-        //            Test Variable Nil ?
-        if let testPassword = demoData[userString] {
-            
-            let truePassword = testPassword
-            print("truePassword ==> " + truePassword)
-            
-            if (passwordString == truePassword) {
-//                Authen True
-                
-                performSegue(withIdentifier: mySegue, sender: self)
-                
-            } else {
-//                Authen False
-                myAlert(title: "Password False", message: "Please Try Again Password False")
-            }
-            
-        } else {
-            myAlert(title: "User False", message: "No \(userString) in my Database")
-        }
-        
-        
-        
-        
-//        let truePassword = demoData[userString]
-//        print("truePassword ==> " + truePassword!)
-        
-        
-    }
+    
     
     func myAlert(title: String, message: String) -> Void {
         
@@ -94,14 +62,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadJSON()
-        
     }   // Main Function
     
 
     
-    func loadJSON() -> Void {
-        print("loadJSON Work")
+    func loadJSON(userString: String, passwordString: String) -> Void {
+        
+        let urlPHP: String = "https://www.androidthai.in.th/bua/getUserWhereUserMaster.php?isAdd=true&User=\(userString)"
         
         let urlAPI = URL(string: urlPHP)
         let request = NSMutableURLRequest(url: urlAPI!)
@@ -114,22 +81,34 @@ class ViewController: UIViewController {
                 if let testData = data {
                     
                     let canReadable = NSString(data: testData, encoding: String.Encoding.utf8.rawValue)
-//                    print("canReadabel ==> \(String(describing: canReadable))")
+                    print("canReadabel ==> \(canReadable!)")
                     
-//                    canReaabel is Optional ?
-                    var jsonString: String = canReadable! as String
+                    let resultJSON = canReadable!
                     
-                    
-                    let squareBrackers1 = "["
-                    let squareBrackers2 = "]"
-                    
-                    let noPrefixJSON = jsonString.components(separatedBy: squareBrackers1)
-                    let noSubfixJSON = noPrefixJSON[1].components(separatedBy: squareBrackers2)
-                    
-                    jsonString = noSubfixJSON[0]
-//                    print("jsonString ==> \(jsonString)")
-                    
-                    self.convertStringToDictionary(jsonString: jsonString)
+                    if resultJSON == "null" {
+//                        User False
+                        
+                        DispatchQueue.main.async {
+                            self.myAlert(title: "User False", message: "No This User in my Database")
+                        }
+                        
+                    } else {
+                        
+                        var jsonString: String = canReadable! as String
+                        
+                        
+                        let squareBrackers1 = "["
+                        let squareBrackers2 = "]"
+                        
+                        let noPrefixJSON = jsonString.components(separatedBy: squareBrackers1)
+                        let noSubfixJSON = noPrefixJSON[1].components(separatedBy: squareBrackers2)
+                        
+                        jsonString = noSubfixJSON[0]
+                        print("jsonString ==> \(jsonString)")
+                        
+                        //                    self.convertStringToDictionary(jsonString: jsonString)
+                        
+                    }
                     
                 } // if
             } // if
@@ -140,35 +119,22 @@ class ViewController: UIViewController {
     }   //loadJSoN
     
     func convertStringToDictionary(jsonString: String) -> Void {
-        
         print("receiveJSoN ==> \(jsonString)")
-        
-//        let testJSONung = "{\"user1\":\"1231\"}"
-        
-        let testJSONung = jsonString
-        
+        let testJSONung = "{\"user1\":\"1231\", \"user2\":\"555\"}"
+//        let testJSONung = jsonString
         var myDictionary: NSDictionary?
-        
         if let myJSON = testJSONung.data(using: String.Encoding.utf8) {
-            
             do {
-                
                 myDictionary = try JSONSerialization.jsonObject(with: myJSON, options: []) as? [String: AnyObject] as NSDictionary?
-                
 //                print("myDictionary ==> \(String(describing: myDictionary))")
-                
                 if let testDict = myDictionary {
                     print("testDict ==> \(testDict)")
+                    print("testDict[user2]\(String(describing: testDict["user2"]))")
                 }
-                
             } catch let error as NSError {
                 print("convert Error ==> \(error)")
             }
-            
-            
-            
-        }   // if
-        
+        }   // if        
     }   // convert
 
 }   // Main Class
