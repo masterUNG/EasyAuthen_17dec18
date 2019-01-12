@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C409E29021D715A2007B79BC /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409E28F21D715A2007B79BC /* ServiceViewController.swift */; };
 		C4232A4721C8C755004B09E8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4232A4621C8C755004B09E8 /* RegisterViewController.swift */; };
+		C47FAFA321E9A29B006DADFD /* ShowProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FAFA221E9A29B006DADFD /* ShowProductViewController.swift */; };
 		C4F09D1E21C787660088DCB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F09D1D21C787660088DCB0 /* AppDelegate.swift */; };
 		C4F09D2021C787660088DCB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F09D1F21C787660088DCB0 /* ViewController.swift */; };
 		C4F09D2321C787660088DCB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4F09D2121C787660088DCB0 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		C409E28F21D715A2007B79BC /* ServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
 		C4232A4621C8C755004B09E8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C47FAFA221E9A29B006DADFD /* ShowProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProductViewController.swift; sourceTree = "<group>"; };
 		C4F09D1A21C787660088DCB0 /* EasyAuthen_17dec18.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyAuthen_17dec18.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4F09D1D21C787660088DCB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4F09D1F21C787660088DCB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				C4F09D2121C787660088DCB0 /* Main.storyboard */,
 				C4232A4621C8C755004B09E8 /* RegisterViewController.swift */,
 				C409E28F21D715A2007B79BC /* ServiceViewController.swift */,
+				C47FAFA221E9A29B006DADFD /* ShowProductViewController.swift */,
 				C4F09D2421C787670088DCB0 /* Assets.xcassets */,
 				C4F09D2621C787670088DCB0 /* LaunchScreen.storyboard */,
 				C4F09D2921C787670088DCB0 /* Info.plist */,
@@ -145,6 +148,7 @@
 				C4F09D2021C787660088DCB0 /* ViewController.swift in Sources */,
 				C409E29021D715A2007B79BC /* ServiceViewController.swift in Sources */,
 				C4F09D1E21C787660088DCB0 /* AppDelegate.swift in Sources */,
+				C47FAFA321E9A29B006DADFD /* ShowProductViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

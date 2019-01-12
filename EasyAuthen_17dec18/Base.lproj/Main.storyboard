@@ -104,6 +104,7 @@
                         <outlet property="passwordTextField" destination="crj-No-76y" id="zNz-eF-ky1"/>
                         <outlet property="userTextField" destination="arM-BX-Zep" id="45p-R3-EMw"/>
                         <segue destination="EDD-hm-Jj4" kind="show" identifier="success_login" id="isb-XX-GQ2"/>
+                        <segue destination="v9K-0B-HZI" kind="show" identifier="GoToShowProduct" id="1fu-1o-ojt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -196,6 +197,21 @@
             </objects>
             <point key="canvasLocation" x="911.59420289855075" y="20.758928571428569"/>
         </scene>
+        <!--ShowProduct-->
+        <scene sceneID="gK6-7K-gYw">
+            <objects>
+                <viewController title="ShowProduct" id="v9K-0B-HZI" customClass="ShowProductViewController" customModule="EasyAuthen_17dec18" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="drN-dj-goa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="DaV-b8-e5d"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9oI-ln-M0G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-810" y="21"/>
+        </scene>
         <!--Service-->
         <scene sceneID="SW1-vx-bbD">
             <objects>
@@ -275,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnB-bd-Vyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-871.01449275362324" y="20.758928571428569"/>
+            <point key="canvasLocation" x="48" y="824"/>
         </scene>
     </scenes>
     <resources>

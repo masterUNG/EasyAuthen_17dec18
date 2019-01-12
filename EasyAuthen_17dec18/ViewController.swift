@@ -13,21 +13,16 @@ class ViewController: UIViewController {
 //    Explicit
     var user: String = ""
     var password: String = ""
-    let mySegue: String = "success_login"
+    let mySegue: String = "GoToShowProduct"
     var receiveJSON: String?
     let urlPHP: String = "https://androidthai.in.th/bua/getAllData.php"
    
     let demoData = ["user1":"1231", "user2":"1232", "user3":"1233", "user4":"1234", "user5":"1235"]
     
     
-    
-    
     @IBOutlet weak var userTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    
-    
     
     @IBAction func loginButton(_ sender: Any) {
         
@@ -50,10 +45,7 @@ class ViewController: UIViewController {
             print("No Space")
             checkUserAnPassword(userString: user, passwordString: password)
             
-            
-            
         }   // if
-        
         
     }   // loginButton Function
     
@@ -122,7 +114,7 @@ class ViewController: UIViewController {
                 if let testData = data {
                     
                     let canReadable = NSString(data: testData, encoding: String.Encoding.utf8.rawValue)
-                    print("canReadabel ==> \(String(describing: canReadable))")
+//                    print("canReadabel ==> \(String(describing: canReadable))")
                     
 //                    canReaabel is Optional ?
                     var jsonString: String = canReadable! as String
@@ -135,14 +127,11 @@ class ViewController: UIViewController {
                     let noSubfixJSON = noPrefixJSON[1].components(separatedBy: squareBrackers2)
                     
                     jsonString = noSubfixJSON[0]
-                    print("jsonString ==> \(jsonString)")
+//                    print("jsonString ==> \(jsonString)")
                     
-//                    self.convertStringToDictionary(jsonString: jsonString)
-                    
-                    
+                    self.convertStringToDictionary(jsonString: jsonString)
                     
                 } // if
-                
             } // if
             
         }   // task
@@ -152,10 +141,11 @@ class ViewController: UIViewController {
     
     func convertStringToDictionary(jsonString: String) -> Void {
         
-//        print("receiveJSoN ==> \(jsonString)")
+        print("receiveJSoN ==> \(jsonString)")
         
-        let testJSONung = "{\"user1\":\"1231\"}"
+//        let testJSONung = "{\"user1\":\"1231\"}"
         
+        let testJSONung = jsonString
         
         var myDictionary: NSDictionary?
         
