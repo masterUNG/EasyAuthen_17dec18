@@ -106,8 +106,8 @@ class ViewController: UIViewController {
                         jsonString = noSubfixJSON[0]
                         print("jsonString ==> \(jsonString)")
                         
-                        //                    self.convertStringToDictionary(jsonString: jsonString)
-                        
+                        self.convertStringToDictionary(jsonString: jsonString, password: passwordString)
+                
                     }
                     
                 } // if
@@ -118,10 +118,10 @@ class ViewController: UIViewController {
 
     }   //loadJSoN
     
-    func convertStringToDictionary(jsonString: String) -> Void {
+    func convertStringToDictionary(jsonString: String, password: String) -> Void {
         print("receiveJSoN ==> \(jsonString)")
-        let testJSONung = "{\"user1\":\"1231\", \"user2\":\"555\"}"
-//        let testJSONung = jsonString
+      
+        let testJSONung = jsonString
         var myDictionary: NSDictionary?
         if let myJSON = testJSONung.data(using: String.Encoding.utf8) {
             do {
@@ -129,7 +129,21 @@ class ViewController: UIViewController {
 //                print("myDictionary ==> \(String(describing: myDictionary))")
                 if let testDict = myDictionary {
                     print("testDict ==> \(testDict)")
-                    print("testDict[user2]\(String(describing: testDict["user2"]))")
+                    
+                    let truePassword: String = testDict["Password"]! as! String
+                    
+                    if (password == truePassword) {
+                        
+                        DispatchQueue.main.async {
+                            self.performSegue(withIdentifier: "GoToShowProduct", sender: self)
+                        }
+                        
+                    } else {
+                        DispatchQueue.main.async {
+                            self.myAlert(title: "Password False", message: "Please Try Again Password")
+                        }
+                    }
+                    
                 }
             } catch let error as NSError {
                 print("convert Error ==> \(error)")
